@@ -56,10 +56,10 @@ resource "aws_instance" "public" {
 
   user_data = <<-EOF
               #!/bin/bash
-              yum update -y
-              yum install -y nginx
-              systemctl start nginx
-              systemctl enable nginx
+              sudo yum update -y
+              sudo yum install -y nginx
+              sudo systemctl start nginx
+              sudo systemctl enable nginx
               EOF
 
   tags = {
@@ -68,7 +68,7 @@ resource "aws_instance" "public" {
 }
 
 resource "aws_instance" "private" {
-  ami           = "ami-0b0ea68c435eb488d" # Amazon Linux 2 AMI (free tier eligible)
+  ami           = "ami-0b0ea68c435eb488d" 
   instance_type = "t2.micro"
 
   subnet_id              = var.private_subnet_id
