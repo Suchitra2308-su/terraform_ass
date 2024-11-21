@@ -56,10 +56,10 @@ resource "aws_instance" "public" {
 
   user_data = <<-EOF
               #!/bin/bash
-              sudo yum update -y
-              sudo yum install -y nginx
-              sudo systemctl start nginx
-              sudo systemctl enable nginx
+              yum update -y
+              yum install -y nginx
+              systemctl start nginx
+              systemctl enable nginx
               EOF
 
   tags = {
