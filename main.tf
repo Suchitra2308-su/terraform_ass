@@ -16,3 +16,7 @@ module "ec2" {
   key_name         = module.ssh_key.key_name
   vpc_id           = module.networking.vpc_id
 }
+
+resource "aws_s3_bucket" "state_3" {
+  bucket = "vikaskarbail12346"
+}
